@@ -36,6 +36,9 @@ public class AdminUserDTO implements Serializable {
     @Size(max = 256)
     private String imageUrl;
 
+    private byte[] image;
+    // private String imageContentType;
+
     private boolean activated = false;
 
     @Size(min = 2, max = 10)
@@ -193,4 +196,20 @@ public class AdminUserDTO implements Serializable {
             ", authorities=" + authorities +
             "}";
     }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+    // public String getImageContentType() {
+    //     return imageContentType;
+    // }
+
+    // public void setImageContentType(String imageContentType) {
+    //     this.imageContentType = imageContentType;
+    // }
+
 }

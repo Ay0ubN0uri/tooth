@@ -2,8 +2,12 @@ package com.a00n.service;
 
 import com.a00n.config.Constants;
 import com.a00n.domain.Authority;
+import com.a00n.domain.Professor;
+import com.a00n.domain.Student;
 import com.a00n.domain.User;
 import com.a00n.repository.AuthorityRepository;
+import com.a00n.repository.ProfessorRepository;
+import com.a00n.repository.StudentRepository;
 import com.a00n.repository.UserRepository;
 import com.a00n.security.AuthoritiesConstants;
 import com.a00n.security.SecurityUtils;
@@ -34,14 +38,26 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    private final ProfessorRepository professorRepository;
+
+    private final StudentRepository studentRepository;
+
     private final PasswordEncoder passwordEncoder;
 
     private final AuthorityRepository authorityRepository;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository) {
+    public UserService(
+        UserRepository userRepository,
+        PasswordEncoder passwordEncoder,
+        AuthorityRepository authorityRepository,
+        ProfessorRepository professorRepository,
+        StudentRepository studentRepository
+    ) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.authorityRepository = authorityRepository;
+        this.professorRepository = professorRepository;
+        this.studentRepository = studentRepository;
     }
 
     public Optional<User> activateRegistration(String key) {
@@ -234,6 +250,42 @@ public class UserService {
                 user.setImageUrl(imageUrl);
                 userRepository.save(user);
                 log.debug("Changed Information for User: {}", user);
+            });
+    }
+
+    public void updateProfUser(String firstName, String lastName, String email, String langKey, String imageUrl, Professor professor) {
+        SecurityUtils
+            .getCurrentUserLogin()
+            .flatMap(userRepository::findOneByLogin)
+            .ifPresent(user -> {
+                user.setFirstName(firstName);
+                user.setLastName(lastName);
+                if (email != null) {
+                    user.setEmail(email.toLowerCase());
+                }
+                user.setLangKey(langKey);
+                user.setImageUrl(imageUrl);
+                userRepository.save(user);
+                professorRepository.save(professor);
+                log.debug("Changed Information for User and prof: {} , {}", user, professor);
+            });
+    }
+
+    public void updateStudentUser(String firstName, String lastName, String email, String langKey, String imageUrl, Student student) {
+        SecurityUtils
+            .getCurrentUserLogin()
+            .flatMap(userRepository::findOneByLogin)
+            .ifPresent(user -> {
+                user.setFirstName(firstName);
+                user.setLastName(lastName);
+                if (email != null) {
+                    user.setEmail(email.toLowerCase());
+                }
+                user.setLangKey(langKey);
+                user.setImageUrl(imageUrl);
+                userRepository.save(user);
+                studentRepository.save(student);
+                log.debug("Changed Information for User and student: {} , {}", user, student);
             });
     }
 

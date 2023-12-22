@@ -4,6 +4,11 @@ export const AUTHORITIES = {
   PROFESSOR: 'ROLE_PROFESSOR',
 };
 
+export const GRADES = {
+  ASSISTANT: 'ASSISTANT',
+  PROFESSOR: 'PROFESSOR',
+};
+
 export const messages = {
   DATA_ERROR_ALERT: 'Internal Error',
 };

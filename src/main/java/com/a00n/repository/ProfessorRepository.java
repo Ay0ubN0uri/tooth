@@ -1,6 +1,7 @@
 package com.a00n.repository;
 
 import com.a00n.domain.Professor;
+import com.a00n.domain.User;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
@@ -37,4 +38,6 @@ public interface ProfessorRepository extends JpaRepository<Professor, Long> {
 
     @Query("select professor from Professor professor left join fetch professor.user where professor.id =:id")
     Optional<Professor> findOneWithToOneRelationships(@Param("id") Long id);
+
+    Optional<Professor> findByUser(User user);
 }

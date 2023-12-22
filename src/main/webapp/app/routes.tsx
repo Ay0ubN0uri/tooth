@@ -14,8 +14,21 @@ import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
+import { ThreeCircles } from 'react-loader-spinner';
 
-const loading = <div>loading ...</div>;
+const loading = (
+  <div className="d-flex align-items-center justify-content-center">
+    <ThreeCircles
+      visible={true}
+      height="100"
+      width="100"
+      color="#3498db"
+      ariaLabel="three-circles-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+    />
+  </div>
+);
 
 const Account = Loadable({
   loader: () => import(/* webpackChunkName: "account" */ 'app/modules/account'),

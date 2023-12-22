@@ -28,9 +28,45 @@ export const saveAccountSettings: (account: any) => AppThunk = account => async 
   dispatch(getSession());
 };
 
+export const saveProfessorAccountSettings: (account: any) => AppThunk = account => async dispatch => {
+  await dispatch(updateProfessorAccount(account));
+
+  if (Storage.session.get(`locale`)) {
+    Storage.session.remove(`locale`);
+  }
+
+  dispatch(getSession());
+};
+
+export const saveStudentAccountSettings: (account: any) => AppThunk = account => async dispatch => {
+  await dispatch(updateStudentAccount(account));
+
+  if (Storage.session.get(`locale`)) {
+    Storage.session.remove(`locale`);
+  }
+
+  dispatch(getSession());
+};
+
 export const updateAccount = createAsyncThunk('settings/update_account', async (account: any) => axios.post<any>(apiUrl, account), {
   serializeError: serializeAxiosError,
 });
+
+export const updateProfessorAccount = createAsyncThunk(
+  'settings/update_professor_account',
+  async (account: any) => axios.post<any>(`${apiUrl}/professor`, account),
+  {
+    serializeError: serializeAxiosError,
+  },
+);
+
+export const updateStudentAccount = createAsyncThunk(
+  'settings/update_student_account',
+  async (account: any) => axios.post<any>(`${apiUrl}/student`, account),
+  {
+    serializeError: serializeAxiosError,
+  },
+);
 
 export const SettingsSlice = createSlice({
   name: 'settings',
@@ -53,6 +89,38 @@ export const SettingsSlice = createSlice({
         state.updateFailure = true;
       })
       .addCase(updateAccount.fulfilled, state => {
+        state.loading = false;
+        state.updateSuccess = true;
+        state.updateFailure = false;
+        state.successMessage = 'settings.messages.success';
+      })
+      .addCase(updateStudentAccount.pending, state => {
+        state.loading = true;
+        state.errorMessage = null;
+        state.updateSuccess = false;
+      })
+      .addCase(updateStudentAccount.rejected, state => {
+        state.loading = false;
+        state.updateSuccess = false;
+        state.updateFailure = true;
+      })
+      .addCase(updateStudentAccount.fulfilled, state => {
+        state.loading = false;
+        state.updateSuccess = true;
+        state.updateFailure = false;
+        state.successMessage = 'settings.messages.success';
+      })
+      .addCase(updateProfessorAccount.pending, state => {
+        state.loading = true;
+        state.errorMessage = null;
+        state.updateSuccess = false;
+      })
+      .addCase(updateProfessorAccount.rejected, state => {
+        state.loading = false;
+        state.updateSuccess = false;
+        state.updateFailure = true;
+      })
+      .addCase(updateProfessorAccount.fulfilled, state => {
         state.loading = false;
         state.updateSuccess = true;
         state.updateFailure = false;

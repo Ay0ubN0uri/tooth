@@ -1,6 +1,7 @@
 package com.a00n.repository;
 
 import com.a00n.domain.Student;
+import com.a00n.domain.User;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
@@ -40,4 +41,6 @@ public interface StudentRepository extends StudentRepositoryWithBagRelationships
 
     @Query("select student from Student student left join fetch student.user where student.id =:id")
     Optional<Student> findOneWithToOneRelationships(@Param("id") Long id);
+
+    Optional<Student> findByUser(User user);
 }

@@ -7,6 +7,12 @@
       "lastname": "Last Name",
       "lastname.placeholder": "Your last name",
       "language": "Language",
+      "cne": "CNE",
+      "cne.placeholder": "L237461894",
+      "cin": "CIN",
+      "cin.placeholder": "J2728429",
+      "birthDay": "Birth Day",
+      "imageUrl": "Profile Image",
       "button": "Save"
     },
     "messages": {
@@ -25,6 +31,17 @@
           "required": "Your last name is required.",
           "minlength": "Your last name is required to be at least 1 character",
           "maxlength": "Your last name cannot be longer than 50 characters"
+        },
+        "cne": {
+          "required": "Your cne is required.",
+          "minlength": "Your cne is required to be at least 10 character"
+        },
+        "cin": {
+          "required": "Your cin is required.",
+          "minlength": "Your cin is required to be at least 8 character"
+        },
+        "birthDay": {
+          "required": "Your Birth Day is required."
         }
       }
     }
