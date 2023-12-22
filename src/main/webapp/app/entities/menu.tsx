@@ -2,14 +2,20 @@ import React from 'react';
 import { Translate } from 'react-jhipster';
 
 import MenuItem from 'app/shared/layout/menus/menu-item';
+import { useAppSelector } from 'app/config/store';
+import { hasAnyAuthority } from 'app/shared/auth/private-route';
+import { AUTHORITIES } from 'app/config/constants';
 
 const EntitiesMenu = () => {
+  const isAdmin = useAppSelector(state => hasAnyAuthority(state.authentication.account.authorities, [AUTHORITIES.ADMIN]));
   return (
     <>
       {/* prettier-ignore */}
-      <MenuItem icon="asterisk" to="/professor">
-        <Translate contentKey="global.menu.entities.professor" />
-      </MenuItem>
+      {isAdmin && (
+        <MenuItem icon="asterisk" to="/professor">
+          <Translate contentKey="global.menu.entities.professor" />
+        </MenuItem>
+      )}
       <MenuItem icon="asterisk" to="/student">
         <Translate contentKey="global.menu.entities.student" />
       </MenuItem>
