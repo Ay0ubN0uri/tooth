@@ -1,0 +1,30 @@
+{
+  "toothApp": {
+    "pW": {
+      "home": {
+        "title": "PWS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new PW",
+        "createOrEditLabel": "Create or edit a PW",
+        "notFound": "No PWS found"
+      },
+      "created": "A new PW is created with identifier {{ param }}",
+      "updated": "A PW is updated with identifier {{ param }}",
+      "deleted": "A PW is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete PW {{ id }}?"
+      },
+      "detail": {
+        "title": "PW"
+      },
+      "id": "ID",
+      "title": "Title",
+      "objectif": "Objectif",
+      "docs": "Docs",
+      "deadline": "Deadline",
+      "tooth": "Tooth",
+      "academicYear": "Academic Year",
+      "groupe": "Groupe"
+    }
+  }
+}

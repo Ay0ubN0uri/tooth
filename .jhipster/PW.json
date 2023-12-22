@@ -1,0 +1,54 @@
+{
+  "annotations": {
+    "changelogDate": "20231222071637"
+  },
+  "applications": "*",
+  "entityTableName": "pw",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "objectif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docs",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deadline",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "PW",
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "tooth",
+      "otherEntityRelationshipName": "pw",
+      "relationshipName": "tooth",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "year",
+      "otherEntityName": "academicYear",
+      "relationshipName": "academicYear",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "code",
+      "otherEntityName": "groupe",
+      "otherEntityRelationshipName": "pw",
+      "relationshipName": "groupe",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

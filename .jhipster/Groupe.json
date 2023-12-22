@@ -1,0 +1,52 @@
+{
+  "annotations": {
+    "changelogDate": "20231222071437"
+  },
+  "applications": "*",
+  "entityTableName": "groupe",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "year",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Groupe",
+  "relationships": [
+    {
+      "otherEntityName": "professor",
+      "otherEntityRelationshipName": "groupe",
+      "relationshipName": "professor",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "year",
+      "otherEntityName": "academicYear",
+      "relationshipName": "academicYear",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "groupe",
+      "relationshipName": "student",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "title",
+      "otherEntityName": "pW",
+      "otherEntityRelationshipName": "groupe",
+      "relationshipName": "pw",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

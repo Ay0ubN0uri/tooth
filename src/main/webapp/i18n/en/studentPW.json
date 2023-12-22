@@ -1,0 +1,30 @@
+{
+  "toothApp": {
+    "studentPW": {
+      "home": {
+        "title": "Student PWS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Student PW",
+        "createOrEditLabel": "Create or edit a Student PW",
+        "notFound": "No Student PWS found"
+      },
+      "created": "A new Student PW is created with identifier {{ param }}",
+      "updated": "A Student PW is updated with identifier {{ param }}",
+      "deleted": "A Student PW is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Student PW {{ id }}?"
+      },
+      "detail": {
+        "title": "Student PW"
+      },
+      "id": "ID",
+      "time": "Time",
+      "imageFront": "Image Front",
+      "imageSide": "Image Side",
+      "date": "Date",
+      "student": "Student",
+      "pw": "Pw",
+      "academicYear": "Academic Year"
+    }
+  }
+}

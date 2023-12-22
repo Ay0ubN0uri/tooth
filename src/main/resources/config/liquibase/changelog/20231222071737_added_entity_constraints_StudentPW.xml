@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity StudentPW.
+    -->
+    <changeSet id="20231222071737-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="student_id"
+                                 baseTableName="student_pw"
+                                 constraintName="fk_student_pw__student_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="student"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="pw_id"
+                                 baseTableName="student_pw"
+                                 constraintName="fk_student_pw__pw_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pw"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="academic_year_id"
+                                 baseTableName="student_pw"
+                                 constraintName="fk_student_pw__academic_year_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="academic_year"
+                                 />
+    </changeSet>
+</databaseChangeLog>

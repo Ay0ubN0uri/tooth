@@ -1,0 +1,29 @@
+{
+  "toothApp": {
+    "groupe": {
+      "home": {
+        "title": "Groupes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Groupe",
+        "createOrEditLabel": "Créer ou éditer un Groupe",
+        "notFound": "Aucun Groupe trouvé"
+      },
+      "created": "Un nouveau Groupe a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Groupe avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Groupe avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Groupe {{ id }} ?"
+      },
+      "detail": {
+        "title": "Groupe"
+      },
+      "id": "ID",
+      "code": "Code",
+      "year": "Year",
+      "professor": "Professor",
+      "academicYear": "Academic Year",
+      "student": "Student",
+      "pw": "Pw"
+    }
+  }
+}

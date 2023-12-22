@@ -1,0 +1,26 @@
+{
+  "toothApp": {
+    "academicYear": {
+      "home": {
+        "title": "AcademicYears",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Academic Year",
+        "createOrEditLabel": "Créer ou éditer un Academic Year",
+        "notFound": "Aucun Academic Year trouvé"
+      },
+      "created": "Un nouveau Academic Year a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Academic Year avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Academic Year avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Academic Year {{ id }} ?"
+      },
+      "detail": {
+        "title": "Academic Year"
+      },
+      "id": "ID",
+      "year": "Year",
+      "startingDate": "Starting Date",
+      "endingDate": "Ending Date"
+    }
+  }
+}

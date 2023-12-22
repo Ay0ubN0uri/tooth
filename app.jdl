@@ -1,0 +1,54 @@
+// Define entities
+entity Professor {
+    grade String
+}
+entity Student {
+    number String required
+    cne String required
+    cin String required
+    birthDay Instant required
+}
+entity Groupe {
+    code String
+    year String
+}
+entity Tooth {
+    name String
+}
+entity PW {
+    title String
+    objectif String
+    docs String
+    deadline Instant
+}
+entity StudentPW {
+    time String
+    imageFront ImageBlob
+    imageSide ImageBlob
+    date Instant
+}
+entity AcademicYear {
+    year String
+    startingDate Instant
+    endingDate Instant
+}
+// Define relationships
+relationship ManyToOne {
+    Groupe{professor required} to Professor{groupe(code)}
+    StudentPW{student required} to Student
+    StudentPW{pw(title) required} to PW
+    PW{tooth(name) required} to Tooth{pw(title)}
+    // academic years
+    Groupe{academicYear(year) required} to AcademicYear
+    StudentPW{academicYear(year) required} to AcademicYear
+    PW{academicYear(year) required} to AcademicYear
+}
+relationship ManyToMany {
+    Student{groupe(code)} to Groupe{student}
+    PW{groupe(code)} to Groupe{pw(title)}
+}
+relationship OneToOne {
+Professor{user(login) required} to User with builtInEntity
+    Student{user(login) required} to User  with builtInEntity
+}
+// dto all with mapstruct

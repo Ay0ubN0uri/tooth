@@ -1,0 +1,24 @@
+{
+  "annotations": {
+    "changelogDate": "20231222071837"
+  },
+  "applications": "*",
+  "entityTableName": "academic_year",
+  "fields": [
+    {
+      "fieldName": "year",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startingDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endingDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "AcademicYear",
+  "relationships": [],
+  "searchEngine": "no"
+}

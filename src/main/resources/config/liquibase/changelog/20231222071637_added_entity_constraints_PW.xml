@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity PW.
+    -->
+    <changeSet id="20231222071637-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="tooth_id"
+                                 baseTableName="pw"
+                                 constraintName="fk_pw__tooth_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tooth"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="academic_year_id"
+                                 baseTableName="pw"
+                                 constraintName="fk_pw__academic_year_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="academic_year"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="pw_id"
+                                 baseTableName="rel_pw__groupe"
+                                 constraintName="fk_rel_pw__groupe__pw_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pw"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="groupe_id"
+                                 baseTableName="rel_pw__groupe"
+                                 constraintName="fk_rel_pw__groupe__groupe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="groupe"
+                                 />
+    </changeSet>
+</databaseChangeLog>

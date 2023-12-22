@@ -1,0 +1,25 @@
+{
+  "toothApp": {
+    "tooth": {
+      "home": {
+        "title": "Teeth",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Tooth",
+        "createOrEditLabel": "Créer ou éditer un Tooth",
+        "notFound": "Aucun Tooth trouvé"
+      },
+      "created": "Un nouveau Tooth a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Tooth avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Tooth avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Tooth {{ id }} ?"
+      },
+      "detail": {
+        "title": "Tooth"
+      },
+      "id": "ID",
+      "name": "Name",
+      "pw": "Pw"
+    }
+  }
+}

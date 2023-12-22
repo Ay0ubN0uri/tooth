@@ -30,6 +30,7 @@ export const App = () => {
   const currentLocale = useAppSelector(state => state.locale.currentLocale);
   const isAuthenticated = useAppSelector(state => state.authentication.isAuthenticated);
   const isAdmin = useAppSelector(state => hasAnyAuthority(state.authentication.account.authorities, [AUTHORITIES.ADMIN]));
+  const isProfessor = useAppSelector(state => hasAnyAuthority(state.authentication.account.authorities, [AUTHORITIES.PROFESSOR]));
   const ribbonEnv = useAppSelector(state => state.applicationProfile.ribbonEnv);
   const isInProduction = useAppSelector(state => state.applicationProfile.inProduction);
   const isOpenAPIEnabled = useAppSelector(state => state.applicationProfile.isOpenAPIEnabled);
@@ -43,6 +44,7 @@ export const App = () => {
           <Header
             isAuthenticated={isAuthenticated}
             isAdmin={isAdmin}
+            isProfessor={isProfessor}
             currentLocale={currentLocale}
             ribbonEnv={ribbonEnv}
             isInProduction={isInProduction}
