@@ -50,13 +50,13 @@ export const StudentPWDetail = () => {
                   <a onClick={openFile(studentPWEntity.imageFrontContentType, studentPWEntity.imageFront)}>
                     <img
                       src={`data:${studentPWEntity.imageFrontContentType};base64,${studentPWEntity.imageFront}`}
-                      style={{ maxHeight: '30px' }}
+                      style={{ maxHeight: '120px' }}
                     />
                   </a>
                 ) : null}
-                <span>
+                {/* <span>
                   {studentPWEntity.imageFrontContentType}, {byteSize(studentPWEntity.imageFront)}
-                </span>
+                </span> */}
               </div>
             ) : null}
           </dd>
@@ -72,13 +72,13 @@ export const StudentPWDetail = () => {
                   <a onClick={openFile(studentPWEntity.imageSideContentType, studentPWEntity.imageSide)}>
                     <img
                       src={`data:${studentPWEntity.imageSideContentType};base64,${studentPWEntity.imageSide}`}
-                      style={{ maxHeight: '30px' }}
+                      style={{ maxHeight: '120px' }}
                     />
                   </a>
                 ) : null}
-                <span>
+                {/* <span>
                   {studentPWEntity.imageSideContentType}, {byteSize(studentPWEntity.imageSide)}
-                </span>
+                </span> */}
               </div>
             ) : null}
           </dd>
@@ -91,7 +91,7 @@ export const StudentPWDetail = () => {
           <dt>
             <Translate contentKey="toothApp.studentPW.student">Student</Translate>
           </dt>
-          <dd>{studentPWEntity.student ? studentPWEntity.student.id : ''}</dd>
+          <dd>{studentPWEntity.student ? `${studentPWEntity.student.user.firstName} ${studentPWEntity.student.user.lastName}` : ''}</dd>
           <dt>
             <Translate contentKey="toothApp.studentPW.pw">Pw</Translate>
           </dt>

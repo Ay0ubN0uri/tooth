@@ -18,6 +18,7 @@
         "title": "Professor"
       },
       "id": "ID",
+      "name": "Full Name",
       "grade": "Grade",
       "user": "User",
       "groupe": "Groupe"

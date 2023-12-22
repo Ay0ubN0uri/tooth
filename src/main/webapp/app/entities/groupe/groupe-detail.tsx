@@ -37,16 +37,16 @@ export const GroupeDetail = () => {
             </span>
           </dt>
           <dd>{groupeEntity.code}</dd>
-          <dt>
+          {/* <dt>
             <span id="year">
               <Translate contentKey="toothApp.groupe.year">Year</Translate>
             </span>
           </dt>
-          <dd>{groupeEntity.year}</dd>
+          <dd>{groupeEntity.year}</dd> */}
           <dt>
             <Translate contentKey="toothApp.groupe.professor">Professor</Translate>
           </dt>
-          <dd>{groupeEntity.professor ? groupeEntity.professor.id : ''}</dd>
+          <dd>{groupeEntity.professor ? `${groupeEntity.professor.user.firstName} ${groupeEntity.professor.user.lastName}` : ''}</dd>
           <dt>
             <Translate contentKey="toothApp.groupe.academicYear">Academic Year</Translate>
           </dt>

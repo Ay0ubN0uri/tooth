@@ -25,7 +25,7 @@ public class Professor implements Serializable {
     @Column(name = "grade")
     private String grade;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(fetch = FetchType.EAGER, optional = false)
     @NotNull
     @JoinColumn(unique = true)
     private User user;

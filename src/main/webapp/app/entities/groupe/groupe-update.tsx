@@ -65,6 +65,7 @@ export const GroupeUpdate = () => {
       values.id = Number(values.id);
     }
 
+    values.year = groupeEntity.year;
     const entity = {
       ...groupeEntity,
       ...values,
@@ -114,7 +115,7 @@ export const GroupeUpdate = () => {
                 />
               ) : null}
               <ValidatedField label={translate('toothApp.groupe.code')} id="groupe-code" name="code" data-cy="code" type="text" />
-              <ValidatedField label={translate('toothApp.groupe.year')} id="groupe-year" name="year" data-cy="year" type="text" />
+              {/* <ValidatedField label={translate('toothApp.groupe.year')} id="groupe-year" name="year" data-cy="year" type="text" /> */}
               <ValidatedField
                 id="groupe-professor"
                 name="professor"
@@ -127,7 +128,7 @@ export const GroupeUpdate = () => {
                 {professors
                   ? professors.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {`${otherEntity.user.firstName} ${otherEntity.user.lastName}`}
                       </option>
                     ))
                   : null}

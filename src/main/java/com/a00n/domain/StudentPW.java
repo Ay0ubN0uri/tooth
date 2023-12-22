@@ -43,7 +43,7 @@ public class StudentPW implements Serializable {
 
     @ManyToOne(optional = false)
     @NotNull
-    @JsonIgnoreProperties(value = { "user", "groupes" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "groupes" }, allowSetters = true)
     private Student student;
 
     @ManyToOne(optional = false)

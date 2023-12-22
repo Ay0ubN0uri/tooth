@@ -130,14 +130,14 @@ export const StudentPW = () => {
                           <a onClick={openFile(studentPW.imageFrontContentType, studentPW.imageFront)}>
                             <img
                               src={`data:${studentPW.imageFrontContentType};base64,${studentPW.imageFront}`}
-                              style={{ maxHeight: '30px' }}
+                              style={{ maxHeight: '60px' }}
                             />
                             &nbsp;
                           </a>
                         ) : null}
-                        <span>
+                        {/* <span>
                           {studentPW.imageFrontContentType}, {byteSize(studentPW.imageFront)}
-                        </span>
+                        </span> */}
                       </div>
                     ) : null}
                   </td>
@@ -148,14 +148,14 @@ export const StudentPW = () => {
                           <a onClick={openFile(studentPW.imageSideContentType, studentPW.imageSide)}>
                             <img
                               src={`data:${studentPW.imageSideContentType};base64,${studentPW.imageSide}`}
-                              style={{ maxHeight: '30px' }}
+                              style={{ maxHeight: '60px' }}
                             />
                             &nbsp;
                           </a>
                         ) : null}
-                        <span>
+                        {/* <span>
                           {studentPW.imageSideContentType}, {byteSize(studentPW.imageSide)}
-                        </span>
+                        </span> */}
                       </div>
                     ) : null}
                   </td>

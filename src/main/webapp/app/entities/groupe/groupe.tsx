@@ -90,9 +90,9 @@ export const Groupe = () => {
                 <th className="hand" onClick={sort('code')}>
                   <Translate contentKey="toothApp.groupe.code">Code</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('code')} />
                 </th>
-                <th className="hand" onClick={sort('year')}>
+                {/* <th className="hand" onClick={sort('year')}>
                   <Translate contentKey="toothApp.groupe.year">Year</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('year')} />
-                </th>
+                </th> */}
                 <th>
                   <Translate contentKey="toothApp.groupe.professor">Professor</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -111,8 +111,16 @@ export const Groupe = () => {
                     </Button>
                   </td>
                   <td>{groupe.code}</td>
-                  <td>{groupe.year}</td>
-                  <td>{groupe.professor ? <Link to={`/professor/${groupe.professor.id}`}>{groupe.professor.id}</Link> : ''}</td>
+                  {/* <td>{groupe.year}</td> */}
+                  <td>
+                    {groupe.professor ? (
+                      <Link
+                        to={`/professor/${groupe.professor.id}`}
+                      >{`${groupe.professor.user.firstName} ${groupe.professor.user.lastName}`}</Link>
+                    ) : (
+                      ''
+                    )}
+                  </td>
                   <td>
                     {groupe.academicYear ? <Link to={`/academic-year/${groupe.academicYear.id}`}>{groupe.academicYear.year}</Link> : ''}
                   </td>

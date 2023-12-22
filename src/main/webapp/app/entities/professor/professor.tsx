@@ -87,6 +87,9 @@ export const Professor = () => {
                 <th className="hand" onClick={sort('id')}>
                   <Translate contentKey="toothApp.professor.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
+                <th className="hand">
+                  <Translate contentKey="toothApp.professor.name">Full Name</Translate>{' '}
+                </th>
                 <th className="hand" onClick={sort('grade')}>
                   <Translate contentKey="toothApp.professor.grade">Grade</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('grade')} />
@@ -105,6 +108,7 @@ export const Professor = () => {
                       {professor.id}
                     </Button>
                   </td>
+                  <td>{`${professor.user.firstName} ${professor.user.lastName}`}</td>
                   <td>{professor.grade}</td>
                   <td>{professor.user ? professor.user.login : ''}</td>
                   <td className="text-end">

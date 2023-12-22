@@ -30,7 +30,7 @@ public class Groupe implements Serializable {
 
     @ManyToOne(optional = false)
     @NotNull
-    @JsonIgnoreProperties(value = { "user", "groupes" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "groupes" }) //, allowSetters = true)
     private Professor professor;
 
     @ManyToOne(optional = false)
