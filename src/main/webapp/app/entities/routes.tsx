@@ -10,6 +10,7 @@ import Tooth from './tooth';
 import PW from './pw';
 import StudentPW from './student-pw';
 import AcademicYear from './academic-year';
+import MyStudents from './my-students';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -24,6 +25,7 @@ export default () => {
         <Route path="pw/*" element={<PW />} />
         <Route path="student-pw/*" element={<StudentPW />} />
         <Route path="academic-year/*" element={<AcademicYear />} />
+        <Route path="my-students/*" element={<MyStudents />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

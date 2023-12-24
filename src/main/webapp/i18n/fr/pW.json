@@ -2,20 +2,20 @@
   "toothApp": {
     "pW": {
       "home": {
-        "title": "PWS",
+        "title": "Travaux pratiques",
         "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau PW",
-        "createOrEditLabel": "Créer ou éditer un PW",
-        "notFound": "Aucun PW trouvé"
+        "createLabel": "Créer un nouveau Travaux pratiques",
+        "createOrEditLabel": "Créer ou éditer un Travail pratique",
+        "notFound": "Aucun Travail pratique trouvé"
       },
       "created": "Un nouveau PW a été créé avec l'identifiant {{ param }}",
-      "updated": "Le PW avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le PW avec l'identifiant {{ param }} a été supprimé",
+      "updated": "Le Travail pratique avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Travail pratique avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le PW {{ id }} ?"
+        "question": "Êtes-vous certain de vouloir supprimer le Travail pratique {{ id }} ?"
       },
       "detail": {
-        "title": "PW"
+        "title": "Travail pratique"
       },
       "id": "ID",
       "title": "Title",

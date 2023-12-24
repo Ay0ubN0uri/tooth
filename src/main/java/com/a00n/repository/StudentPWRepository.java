@@ -39,4 +39,6 @@ public interface StudentPWRepository extends JpaRepository<StudentPW, Long> {
         "select studentPW from StudentPW studentPW left join fetch studentPW.pw left join fetch studentPW.academicYear where studentPW.id =:id"
     )
     Optional<StudentPW> findOneWithToOneRelationships(@Param("id") Long id);
+
+    List<StudentPW> findByStudentId(Long id);
 }

@@ -37,4 +37,10 @@ public interface GroupeRepository extends JpaRepository<Groupe, Long> {
 
     @Query("select groupe from Groupe groupe left join fetch groupe.academicYear where groupe.id =:id")
     Optional<Groupe> findOneWithToOneRelationships(@Param("id") Long id);
+
+    @Query("SELECT g.code, COUNT(s) FROM Groupe g JOIN g.students s GROUP BY g.code")
+    List<Object[]> countStudentsPerGroupe();
+
+    @Query("SELECT g.code, COUNT(pws) FROM Groupe g JOIN g.pws pws GROUP BY g.code")
+    List<Object[]> countPWsPerGroupe();
 }

@@ -1,6 +1,8 @@
 package com.a00n.web.rest;
 
 import com.a00n.domain.Student;
+import com.a00n.domain.StudentPW;
+import com.a00n.repository.StudentPWRepository;
 import com.a00n.repository.StudentRepository;
 import com.a00n.web.rest.errors.BadRequestAlertException;
 import jakarta.validation.Valid;
@@ -35,9 +37,11 @@ public class StudentResource {
     private String applicationName;
 
     private final StudentRepository studentRepository;
+    private final StudentPWRepository studentPWRepository;
 
-    public StudentResource(StudentRepository studentRepository) {
+    public StudentResource(StudentRepository studentRepository, StudentPWRepository studentPWRepository) {
         this.studentRepository = studentRepository;
+        this.studentPWRepository = studentPWRepository;
     }
 
     /**
@@ -164,6 +168,13 @@ public class StudentResource {
         }
     }
 
+    @GetMapping("/mystudents/{yearId}/{groupId}")
+    public List<Student> getStudentsByAcademicYearAndGroup(@PathVariable("yearId") Long yearId, @PathVariable("groupId") Long groupId) {
+        System.out.println(yearId);
+        System.out.println(groupId);
+        return studentRepository.findByGroupIdAndAcademicYearId(groupId, yearId);
+    }
+
     /**
      * {@code GET  /students/:id} : get the "id" student.
      *
@@ -175,6 +186,12 @@ public class StudentResource {
         log.debug("REST request to get Student : {}", id);
         Optional<Student> student = studentRepository.findOneWithEagerRelationships(id);
         return ResponseUtil.wrapOrNotFound(student);
+    }
+
+    @GetMapping("/{id}/pws")
+    public List<StudentPW> getStudentPWByStudent(@PathVariable("id") Long id) {
+        log.debug("REST request to get StudentPW : {}", id);
+        return studentPWRepository.findByStudentId(id);
     }
 
     /**

@@ -9,7 +9,7 @@ import { serializeAxiosError } from './reducer.utils';
 const AUTH_TOKEN_KEY = 'jhi-authenticationToken';
 
 export const initialState = {
-  loading: false,
+  loading: true,
   isAuthenticated: false,
   loginSuccess: false,
   loginError: false, // Errors returned from server side

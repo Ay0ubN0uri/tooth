@@ -1,5 +1,6 @@
 package com.a00n.repository;
 
+import com.a00n.domain.Groupe;
 import com.a00n.domain.Student;
 import com.a00n.domain.User;
 import java.util.List;
@@ -43,4 +44,12 @@ public interface StudentRepository extends StudentRepositoryWithBagRelationships
     Optional<Student> findOneWithToOneRelationships(@Param("id") Long id);
 
     Optional<Student> findByUser(User user);
+
+    List<Student> findByGroupes(Groupe groupe);
+
+    @Query("SELECT s FROM Student s JOIN s.groupes g WHERE g.id = :groupId")
+    List<Student> findByGroupId(@Param("groupId") Long groupId);
+
+    @Query("SELECT s FROM Student s LEFT JOIN FETCH s.groupes g WHERE g.id = :groupId AND g.academicYear.id = :academicYearId")
+    List<Student> findByGroupIdAndAcademicYearId(@Param("groupId") Long groupId, @Param("academicYearId") Long academicYearId);
 }

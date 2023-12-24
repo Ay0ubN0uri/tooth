@@ -14,6 +14,7 @@ const store = configureStore({
       serializableCheck: {
         // Ignore these field paths in all actions
         ignoredActionPaths: ['payload.config', 'payload.request', 'payload.headers', 'error', 'meta.arg'],
+        // ignoredPaths: ['dashboard.countStats.headers', 'dashboard.countStats.config.transformRequest.0'],
       },
     }).concat(errorMiddleware, notificationMiddleware, loadingBarMiddleware(), loggerMiddleware),
 });

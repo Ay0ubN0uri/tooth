@@ -2,20 +2,20 @@
   "toothApp": {
     "pW": {
       "home": {
-        "title": "PWS",
+        "title": "Pactice Works",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new PW",
-        "createOrEditLabel": "Create or edit a PW",
-        "notFound": "No PWS found"
+        "createLabel": "Create a new Pactice Work",
+        "createOrEditLabel": "Create or edit a Pactice Work",
+        "notFound": "No Pactice Work found"
       },
-      "created": "A new PW is created with identifier {{ param }}",
-      "updated": "A PW is updated with identifier {{ param }}",
-      "deleted": "A PW is deleted with identifier {{ param }}",
+      "created": "A new Pactice Work is created with identifier {{ param }}",
+      "updated": "A Pactice Work is updated with identifier {{ param }}",
+      "deleted": "A Pactice Work is deleted with identifier {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete PW {{ id }}?"
+        "question": "Are you sure you want to delete Pactice Work {{ id }}?"
       },
       "detail": {
-        "title": "PW"
+        "title": "Pactice Work"
       },
       "id": "ID",
       "title": "Title",

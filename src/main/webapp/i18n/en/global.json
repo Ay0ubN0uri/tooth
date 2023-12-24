@@ -12,9 +12,10 @@
         "student": "Student",
         "groupe": "Groupe",
         "tooth": "Tooth",
-        "pw": "PW",
-        "studentPw": "Student PW",
-        "academicYear": "Academic Year"
+        "pw": "Pactice Works",
+        "studentPw": "Student Pactice Works",
+        "academicYear": "Academic Year",
+        "myStudents": "My Students"
       },
       "account": {
         "main": "Account",

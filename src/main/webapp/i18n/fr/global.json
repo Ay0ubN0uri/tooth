@@ -8,13 +8,14 @@
       "entities": {
         "main": "Gerer",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-        "professor": "Professor",
-        "student": "Student",
+        "professor": "Professeur",
+        "student": "Étudiant",
         "groupe": "Groupe",
-        "tooth": "Tooth",
+        "tooth": "Dent",
         "pw": "PW",
         "studentPw": "Student PW",
-        "academicYear": "Academic Year"
+        "academicYear": "Année académique",
+        "myStudents": "Mes Etudiants"
       },
       "account": {
         "main": "Compte",

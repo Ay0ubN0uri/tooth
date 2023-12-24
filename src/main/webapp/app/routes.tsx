@@ -15,20 +15,9 @@ import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import { ThreeCircles } from 'react-loader-spinner';
+import LoadingSpinner from './shared/components/LoadingSpinner';
 
-const loading = (
-  <div className="d-flex align-items-center justify-content-center">
-    <ThreeCircles
-      visible={true}
-      height="100"
-      width="100"
-      color="#3498db"
-      ariaLabel="three-circles-loading"
-      wrapperStyle={{}}
-      wrapperClass=""
-    />
-  </div>
-);
+const loading = <LoadingSpinner />;
 
 const Account = Loadable({
   loader: () => import(/* webpackChunkName: "account" */ 'app/modules/account'),

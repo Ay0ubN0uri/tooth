@@ -2,20 +2,20 @@
   "toothApp": {
     "studentPW": {
       "home": {
-        "title": "Student PWS",
+        "title": "Student Pactice Works",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Student PW",
-        "createOrEditLabel": "Create or edit a Student PW",
-        "notFound": "No Student PWS found"
+        "createLabel": "Create a new Student Pactice Work",
+        "createOrEditLabel": "Create or edit a Student Pactice Work",
+        "notFound": "No Student Pactice Works found"
       },
-      "created": "A new Student PW is created with identifier {{ param }}",
-      "updated": "A Student PW is updated with identifier {{ param }}",
-      "deleted": "A Student PW is deleted with identifier {{ param }}",
+      "created": "A new Student Pactice Work is created with identifier {{ param }}",
+      "updated": "A Student Pactice Work is updated with identifier {{ param }}",
+      "deleted": "A Student Pactice Work is deleted with identifier {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Student PW {{ id }}?"
+        "question": "Are you sure you want to delete Student Pactice Work {{ id }}?"
       },
       "detail": {
-        "title": "Student PW"
+        "title": "Student Pactice Work"
       },
       "id": "ID",
       "time": "Time",

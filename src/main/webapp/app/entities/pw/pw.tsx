@@ -67,7 +67,7 @@ export const PW = () => {
   return (
     <div>
       <h2 id="pw-heading" data-cy="PWHeading">
-        <Translate contentKey="toothApp.pW.home.title">PWS</Translate>
+        <Translate contentKey="toothApp.pW.home.title">Pactice Works</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
@@ -129,14 +129,15 @@ export const PW = () => {
                   <td>{pW.tooth ? <Link to={`/tooth/${pW.tooth.id}`}>{pW.tooth.name}</Link> : ''}</td>
                   <td>{pW.academicYear ? <Link to={`/academic-year/${pW.academicYear.id}`}>{pW.academicYear.year}</Link> : ''}</td>
                   <td>
-                    {pW.groupes
+                    {pW.groupes ? pW.groupes.length : 0}
+                    {/* {pW.groupes
                       ? pW.groupes.map((val, j) => (
                           <span key={j}>
                             <Link to={`/groupe/${val.id}`}>{val.code}</Link>
                             {j === pW.groupes.length - 1 ? '' : ', '}
                           </span>
                         ))
-                      : null}
+                      : null} */}
                   </td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">

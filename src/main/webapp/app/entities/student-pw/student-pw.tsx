@@ -67,7 +67,7 @@ export const StudentPW = () => {
   return (
     <div>
       <h2 id="student-pw-heading" data-cy="StudentPWHeading">
-        <Translate contentKey="toothApp.studentPW.home.title">Student PWS</Translate>
+        <Translate contentKey="toothApp.studentPW.home.title">Student Practice Works</Translate>
         <div className="d-flex justify-content-end">
           <Button className="me-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
@@ -160,7 +160,9 @@ export const StudentPW = () => {
                     ) : null}
                   </td>
                   <td>{studentPW.date ? <TextFormat type="date" value={studentPW.date} format={APP_DATE_FORMAT} /> : null}</td>
-                  <td>{studentPW.student ? <Link to={`/student/${studentPW.student.id}`}>{studentPW.student.id}</Link> : ''}</td>
+                  <td>
+                    {studentPW.student ? <Link to={`/student/${studentPW.student.id}`}>{studentPW.student.user.firstName}</Link> : ''}
+                  </td>
                   <td>{studentPW.pw ? <Link to={`/pw/${studentPW.pw.id}`}>{studentPW.pw.title}</Link> : ''}</td>
                   <td>
                     {studentPW.academicYear ? (

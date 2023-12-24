@@ -2,7 +2,7 @@
   "toothApp": {
     "studentPW": {
       "home": {
-        "title": "StudentPWS",
+        "title": "Travaux pratiques des étudiants",
         "refreshListLabel": "Actualiser la liste",
         "createLabel": "Créer un nouveau Student PW",
         "createOrEditLabel": "Créer ou éditer un Student PW",
