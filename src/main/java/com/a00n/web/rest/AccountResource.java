@@ -353,6 +353,18 @@ public class AccountResource {
         }
     }
 
+    @PostMapping(path = "/account/reset-password/init/mobile")
+    public void requestPasswordResetMobile(@RequestBody String mail) {
+        Optional<User> user = userService.requestPasswordResetMobile(mail);
+        if (user.isPresent()) {
+            mailService.sendPasswordResetMailMobile(user.orElseThrow());
+        } else {
+            // Pretend the request has been successful to prevent checking which emails really exist
+            // but log that an invalid attempt has been made
+            log.warn("Password reset requested for non existing mail");
+        }
+    }
+
     /**
      * {@code POST   /account/reset-password/finish} : Finish to reset the password of the user.
      *

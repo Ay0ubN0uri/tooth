@@ -97,6 +97,25 @@ public class UserService {
             });
     }
 
+    private String generateRandomPassword() {
+        Random random = new Random();
+
+        int randomPassword = random.nextInt(9000) + 1000;
+
+        return String.valueOf(randomPassword);
+    }
+
+    public Optional<User> requestPasswordResetMobile(String mail) {
+        return userRepository
+            .findOneByEmailIgnoreCase(mail)
+            .filter(User::isActivated)
+            .map(user -> {
+                user.setResetKey(generateRandomPassword());
+                user.setResetDate(Instant.now());
+                return user;
+            });
+    }
+
     public User registerUser(AdminUserDTO userDTO, String password) {
         userRepository
             .findOneByLogin(userDTO.getLogin().toLowerCase())

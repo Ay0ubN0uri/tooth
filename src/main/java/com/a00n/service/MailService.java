@@ -117,4 +117,10 @@ public class MailService {
         log.debug("Sending password reset email to '{}'", user.getEmail());
         this.sendEmailFromTemplateSync(user, "mail/passwordResetEmail", "email.reset.title");
     }
+
+    @Async
+    public void sendPasswordResetMailMobile(User user) {
+        log.debug("Sending password reset email to '{}'", user.getEmail());
+        this.sendEmailFromTemplateSync(user, "mail/passwordResetEmailMobile", "email.reset.title");
+    }
 }
