@@ -15,9 +15,11 @@ import locale from './locale';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 import dashboard from 'app/modules/home/home.reducer';
+import mystudents from 'app/entities/my-students/my-students.reducer';
 
 const rootReducer: ReducersMapObject = {
   dashboard,
+  mystudents,
   authentication,
   locale,
   applicationProfile,

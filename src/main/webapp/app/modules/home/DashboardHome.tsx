@@ -71,7 +71,7 @@ const DashboardHome = () => {
               <BarChart title="Number of students per groups" subtitle="Overview" chartData={studentsPerGroupChart} />
             </div>
             <div className="col-xl-6">
-              <BarChart title="Number of students per groups" subtitle="Overview" chartData={pwsPerGroupChart} />
+              <BarChart title="Number of practice work per groups" subtitle="Overview" chartData={pwsPerGroupChart} />
             </div>
           </div>
         </>

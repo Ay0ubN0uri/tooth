@@ -4,11 +4,14 @@ import com.a00n.domain.Student;
 import com.a00n.domain.StudentPW;
 import com.a00n.repository.StudentPWRepository;
 import com.a00n.repository.StudentRepository;
+import com.a00n.security.AuthoritiesConstants;
+import com.a00n.service.UserService;
 import com.a00n.web.rest.errors.BadRequestAlertException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -38,10 +41,12 @@ public class StudentResource {
 
     private final StudentRepository studentRepository;
     private final StudentPWRepository studentPWRepository;
+    private final UserService userService;
 
-    public StudentResource(StudentRepository studentRepository, StudentPWRepository studentPWRepository) {
+    public StudentResource(StudentRepository studentRepository, StudentPWRepository studentPWRepository, UserService userService) {
         this.studentRepository = studentRepository;
         this.studentPWRepository = studentPWRepository;
+        this.userService = userService;
     }
 
     /**
@@ -170,9 +175,21 @@ public class StudentResource {
 
     @GetMapping("/mystudents/{yearId}/{groupId}")
     public List<Student> getStudentsByAcademicYearAndGroup(@PathVariable("yearId") Long yearId, @PathVariable("groupId") Long groupId) {
-        System.out.println(yearId);
-        System.out.println(groupId);
-        return studentRepository.findByGroupIdAndAcademicYearId(groupId, yearId);
+        // System.out.println(yearId);
+        // System.out.println(groupId);
+        List<Student> students = new ArrayList<>();
+        for (Student student : studentRepository.findByGroupIdAndAcademicYearId(groupId, yearId)) {
+            var user = userService.getUserWithAuthoritiesByLogin(student.getUser().getLogin()).orElse(null);
+            if (user != null) {
+                // System.out.println(user.getAuthorities());
+                // System.out.println(user.hasRole(AuthoritiesConstants.ADMIN));
+                // System.out.println(user.hasRole(AuthoritiesConstants.PROFESSOR));
+                if (!user.hasRole(AuthoritiesConstants.PROFESSOR) && !user.hasRole(AuthoritiesConstants.ADMIN)) {
+                    students.add(student);
+                }
+            }
+        }
+        return students;
     }
 
     /**

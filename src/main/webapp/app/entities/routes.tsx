@@ -11,6 +11,7 @@ import PW from './pw';
 import StudentPW from './student-pw';
 import AcademicYear from './academic-year';
 import MyStudents from './my-students';
+import Profile from 'app/modules/profile/index';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -26,6 +27,7 @@ export default () => {
         <Route path="student-pw/*" element={<StudentPW />} />
         <Route path="academic-year/*" element={<AcademicYear />} />
         <Route path="my-students/*" element={<MyStudents />} />
+        <Route path="profile/*" element={<Profile />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>
