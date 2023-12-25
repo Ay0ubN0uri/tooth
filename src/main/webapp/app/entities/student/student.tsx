@@ -125,14 +125,15 @@ export const Student = () => {
                   <td>{student.birthDay ? <TextFormat type="date" value={student.birthDay} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{student.user ? student.user.login : ''}</td>
                   <td>
-                    {student.groupes
+                    {student.groupes ? student.groupes.length : 0}
+                    {/* {student.groupes
                       ? student.groupes.map((val, j) => (
                           <span key={j}>
                             <Link to={`/groupe/${val.id}`}>{val.code}</Link>
                             {j === student.groupes.length - 1 ? '' : ', '}
                           </span>
                         ))
-                      : null}
+                      : null} */}
                   </td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">

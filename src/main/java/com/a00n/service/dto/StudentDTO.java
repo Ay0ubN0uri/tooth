@@ -6,6 +6,7 @@ import java.time.Instant;
 
 public class StudentDTO extends AdminUserDTO {
 
+    private Long studentId;
     private String number;
     private String cne;
     private String cin;
@@ -17,6 +18,7 @@ public class StudentDTO extends AdminUserDTO {
 
     public StudentDTO(User user, Student student) {
         super(user);
+        this.studentId = student.getId();
         this.number = student.getNumber();
         this.cne = student.getCne();
         this.cin = student.getCin();
@@ -53,5 +55,13 @@ public class StudentDTO extends AdminUserDTO {
 
     public void setBirthDay(Instant birthDay) {
         this.birthDay = birthDay;
+    }
+
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
     }
 }
