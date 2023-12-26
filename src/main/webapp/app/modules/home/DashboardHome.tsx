@@ -77,7 +77,7 @@ const DashboardHome = () => {
           </div>
           <div className="row">
             <div className="col-xl-6">
-              <LineChart title="Number of practice work per groups" subtitle="Overview" />
+              <LineChart title="Learning curve" subtitle="Overview" />
             </div>
           </div>
         </>

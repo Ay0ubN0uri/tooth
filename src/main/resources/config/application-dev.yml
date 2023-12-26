@@ -32,9 +32,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/tooth?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
-    username: ayoub
-    password: ayoub
+    url: jdbc:mysql://viaduct.proxy.rlwy.net:28522/railway?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    username: root
+    password: FEehdaD1Afe4gGehDg3gF4H13g3FdE35
     hikari:
       poolName: Hikari
       auto-commit: false

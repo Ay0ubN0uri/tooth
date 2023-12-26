@@ -224,7 +224,15 @@ export const StudentPW = () => {
                   <td>{studentPW.p1ImageFront}</td>
                   <td>{studentPW.p2ImageFront}</td>
                   <td>{studentPW.p3ImageFront}</td>
-                  <td>{studentPW.student ? <Link to={`/student/${studentPW.student.id}`}>{studentPW.student.id}</Link> : ''}</td>
+                  <td>
+                    {studentPW.student ? (
+                      <Link
+                        to={`/student/${studentPW.student.id}`}
+                      >{`${studentPW.student.user.firstName} ${studentPW.student.user.lastName}`}</Link>
+                    ) : (
+                      ''
+                    )}
+                  </td>
                   <td>{studentPW.pw ? <Link to={`/pw/${studentPW.pw.id}`}>{studentPW.pw.title}</Link> : ''}</td>
                   <td>
                     {studentPW.academicYear ? (
