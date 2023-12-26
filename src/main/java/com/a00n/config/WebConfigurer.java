@@ -51,7 +51,8 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
      */
     @Override
     public void customize(WebServerFactory server) {
-        // When running in an IDE or with ./mvnw spring-boot:run, set location of the static web assets.
+        // When running in an IDE or with ./mvnw spring-boot:run, set location of the
+        // static web assets.
         setLocationForStaticAssets(server);
     }
 
@@ -84,6 +85,9 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = jHipsterProperties.getCors();
+        config.addAllowedOrigin("*");
+        config.addAllowedMethod("*");
+        config.addAllowedHeader("*");
         if (!CollectionUtils.isEmpty(config.getAllowedOrigins()) || !CollectionUtils.isEmpty(config.getAllowedOriginPatterns())) {
             log.debug("Registering CORS filter");
             source.registerCorsConfiguration("/api/**", config);
