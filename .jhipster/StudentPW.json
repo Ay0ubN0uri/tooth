@@ -22,6 +22,58 @@
     {
       "fieldName": "date",
       "fieldType": "Instant"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "a1ImageSide",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "a2ImageSide",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "a3ImageSide",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "p1ImageSide",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "p2ImageSide",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "p3ImageSide",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "a1ImageFront",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "a2ImageFront",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "a3ImageFront",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "p1ImageFront",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "p2ImageFront",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "p3ImageFront",
+      "fieldType": "Double"
     }
   ],
   "name": "StudentPW",

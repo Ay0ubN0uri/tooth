@@ -32,7 +32,15 @@ const StudentTable = ({ students }: { students: any }) => {
                 </td>
                 <td>{student.cne}</td>
                 <td className="table-actions">
-                  <a href={`/profile/${student.id}`} className="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                  <a
+                    href={`/profile/${student.id}`}
+                    style={{
+                      fontSize: '1.3rem',
+                    }}
+                    className="table-action"
+                    data-toggle="tooltip"
+                    data-original-title="Edit product"
+                  >
                     <i className="fas fa-user-edit"></i>
                   </a>
                 </td>

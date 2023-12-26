@@ -143,6 +143,45 @@ public class StudentPWResource {
                 if (studentPW.getDate() != null) {
                     existingStudentPW.setDate(studentPW.getDate());
                 }
+                if (studentPW.getNote() != null) {
+                    existingStudentPW.setNote(studentPW.getNote());
+                }
+                if (studentPW.geta1ImageSide() != null) {
+                    existingStudentPW.seta1ImageSide(studentPW.geta1ImageSide());
+                }
+                if (studentPW.geta2ImageSide() != null) {
+                    existingStudentPW.seta2ImageSide(studentPW.geta2ImageSide());
+                }
+                if (studentPW.geta3ImageSide() != null) {
+                    existingStudentPW.seta3ImageSide(studentPW.geta3ImageSide());
+                }
+                if (studentPW.getp1ImageSide() != null) {
+                    existingStudentPW.setp1ImageSide(studentPW.getp1ImageSide());
+                }
+                if (studentPW.getp2ImageSide() != null) {
+                    existingStudentPW.setp2ImageSide(studentPW.getp2ImageSide());
+                }
+                if (studentPW.getp3ImageSide() != null) {
+                    existingStudentPW.setp3ImageSide(studentPW.getp3ImageSide());
+                }
+                if (studentPW.geta1ImageFront() != null) {
+                    existingStudentPW.seta1ImageFront(studentPW.geta1ImageFront());
+                }
+                if (studentPW.geta2ImageFront() != null) {
+                    existingStudentPW.seta2ImageFront(studentPW.geta2ImageFront());
+                }
+                if (studentPW.geta3ImageFront() != null) {
+                    existingStudentPW.seta3ImageFront(studentPW.geta3ImageFront());
+                }
+                if (studentPW.getp1ImageFront() != null) {
+                    existingStudentPW.setp1ImageFront(studentPW.getp1ImageFront());
+                }
+                if (studentPW.getp2ImageFront() != null) {
+                    existingStudentPW.setp2ImageFront(studentPW.getp2ImageFront());
+                }
+                if (studentPW.getp3ImageFront() != null) {
+                    existingStudentPW.setp3ImageFront(studentPW.getp3ImageFront());
+                }
 
                 return existingStudentPW;
             })

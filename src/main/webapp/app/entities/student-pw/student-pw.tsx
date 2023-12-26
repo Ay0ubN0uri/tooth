@@ -102,6 +102,57 @@ export const StudentPW = () => {
                 <th className="hand" onClick={sort('date')}>
                   <Translate contentKey="toothApp.studentPW.date">Date</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('date')} />
                 </th>
+                <th className="hand" onClick={sort('note')}>
+                  <Translate contentKey="toothApp.studentPW.note">Note</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('note')} />
+                </th>
+                <th className="hand" onClick={sort('a1ImageSide')}>
+                  <Translate contentKey="toothApp.studentPW.a1ImageSide">A 1 Image Side</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('a1ImageSide')} />
+                </th>
+                <th className="hand" onClick={sort('a2ImageSide')}>
+                  <Translate contentKey="toothApp.studentPW.a2ImageSide">A 2 Image Side</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('a2ImageSide')} />
+                </th>
+                <th className="hand" onClick={sort('a3ImageSide')}>
+                  <Translate contentKey="toothApp.studentPW.a3ImageSide">A 3 Image Side</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('a3ImageSide')} />
+                </th>
+                <th className="hand" onClick={sort('p1ImageSide')}>
+                  <Translate contentKey="toothApp.studentPW.p1ImageSide">P 1 Image Side</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('p1ImageSide')} />
+                </th>
+                <th className="hand" onClick={sort('p2ImageSide')}>
+                  <Translate contentKey="toothApp.studentPW.p2ImageSide">P 2 Image Side</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('p2ImageSide')} />
+                </th>
+                <th className="hand" onClick={sort('p3ImageSide')}>
+                  <Translate contentKey="toothApp.studentPW.p3ImageSide">P 3 Image Side</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('p3ImageSide')} />
+                </th>
+                <th className="hand" onClick={sort('a1ImageFront')}>
+                  <Translate contentKey="toothApp.studentPW.a1ImageFront">A 1 Image Front</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('a1ImageFront')} />
+                </th>
+                <th className="hand" onClick={sort('a2ImageFront')}>
+                  <Translate contentKey="toothApp.studentPW.a2ImageFront">A 2 Image Front</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('a2ImageFront')} />
+                </th>
+                <th className="hand" onClick={sort('a3ImageFront')}>
+                  <Translate contentKey="toothApp.studentPW.a3ImageFront">A 3 Image Front</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('a3ImageFront')} />
+                </th>
+                <th className="hand" onClick={sort('p1ImageFront')}>
+                  <Translate contentKey="toothApp.studentPW.p1ImageFront">P 1 Image Front</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('p1ImageFront')} />
+                </th>
+                <th className="hand" onClick={sort('p2ImageFront')}>
+                  <Translate contentKey="toothApp.studentPW.p2ImageFront">P 2 Image Front</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('p2ImageFront')} />
+                </th>
+                <th className="hand" onClick={sort('p3ImageFront')}>
+                  <Translate contentKey="toothApp.studentPW.p3ImageFront">P 3 Image Front</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('p3ImageFront')} />
+                </th>
                 <th>
                   <Translate contentKey="toothApp.studentPW.student">Student</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -160,9 +211,20 @@ export const StudentPW = () => {
                     ) : null}
                   </td>
                   <td>{studentPW.date ? <TextFormat type="date" value={studentPW.date} format={APP_DATE_FORMAT} /> : null}</td>
-                  <td>
-                    {studentPW.student ? <Link to={`/student/${studentPW.student.id}`}>{studentPW.student.user.firstName}</Link> : ''}
-                  </td>
+                  <td>{studentPW.note}</td>
+                  <td>{studentPW.a1ImageSide}</td>
+                  <td>{studentPW.a2ImageSide}</td>
+                  <td>{studentPW.a3ImageSide}</td>
+                  <td>{studentPW.p1ImageSide}</td>
+                  <td>{studentPW.p2ImageSide}</td>
+                  <td>{studentPW.p3ImageSide}</td>
+                  <td>{studentPW.a1ImageFront}</td>
+                  <td>{studentPW.a2ImageFront}</td>
+                  <td>{studentPW.a3ImageFront}</td>
+                  <td>{studentPW.p1ImageFront}</td>
+                  <td>{studentPW.p2ImageFront}</td>
+                  <td>{studentPW.p3ImageFront}</td>
+                  <td>{studentPW.student ? <Link to={`/student/${studentPW.student.id}`}>{studentPW.student.id}</Link> : ''}</td>
                   <td>{studentPW.pw ? <Link to={`/pw/${studentPW.pw.id}`}>{studentPW.pw.title}</Link> : ''}</td>
                   <td>
                     {studentPW.academicYear ? (

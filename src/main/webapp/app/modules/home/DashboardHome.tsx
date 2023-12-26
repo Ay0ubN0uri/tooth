@@ -5,6 +5,7 @@ import { Data } from 'app/shared/components/charts/Test';
 import React, { useEffect, useState } from 'react';
 import { fetchStatsData, getCountStats, getStudentsPerGroup } from './home.reducer';
 import LoadingSpinner from 'app/shared/components/LoadingSpinner';
+import LineChart from 'app/shared/components/charts/LineChart';
 
 const DashboardHome = () => {
   const dispatch = useAppDispatch();
@@ -72,6 +73,11 @@ const DashboardHome = () => {
             </div>
             <div className="col-xl-6">
               <BarChart title="Number of practice work per groups" subtitle="Overview" chartData={pwsPerGroupChart} />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-xl-6">
+              <LineChart title="Number of practice work per groups" subtitle="Overview" />
             </div>
           </div>
         </>

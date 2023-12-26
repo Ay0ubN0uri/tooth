@@ -89,6 +89,84 @@ export const StudentPWDetail = () => {
           </dt>
           <dd>{studentPWEntity.date ? <TextFormat value={studentPWEntity.date} type="date" format={APP_DATE_FORMAT} /> : null}</dd>
           <dt>
+            <span id="note">
+              <Translate contentKey="toothApp.studentPW.note">Note</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.note}</dd>
+          <dt>
+            <span id="a1ImageSide">
+              <Translate contentKey="toothApp.studentPW.a1ImageSide">A 1 Image Side</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.a1ImageSide}</dd>
+          <dt>
+            <span id="a2ImageSide">
+              <Translate contentKey="toothApp.studentPW.a2ImageSide">A 2 Image Side</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.a2ImageSide}</dd>
+          <dt>
+            <span id="a3ImageSide">
+              <Translate contentKey="toothApp.studentPW.a3ImageSide">A 3 Image Side</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.a3ImageSide}</dd>
+          <dt>
+            <span id="p1ImageSide">
+              <Translate contentKey="toothApp.studentPW.p1ImageSide">P 1 Image Side</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.p1ImageSide}</dd>
+          <dt>
+            <span id="p2ImageSide">
+              <Translate contentKey="toothApp.studentPW.p2ImageSide">P 2 Image Side</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.p2ImageSide}</dd>
+          <dt>
+            <span id="p3ImageSide">
+              <Translate contentKey="toothApp.studentPW.p3ImageSide">P 3 Image Side</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.p3ImageSide}</dd>
+          <dt>
+            <span id="a1ImageFront">
+              <Translate contentKey="toothApp.studentPW.a1ImageFront">A 1 Image Front</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.a1ImageFront}</dd>
+          <dt>
+            <span id="a2ImageFront">
+              <Translate contentKey="toothApp.studentPW.a2ImageFront">A 2 Image Front</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.a2ImageFront}</dd>
+          <dt>
+            <span id="a3ImageFront">
+              <Translate contentKey="toothApp.studentPW.a3ImageFront">A 3 Image Front</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.a3ImageFront}</dd>
+          <dt>
+            <span id="p1ImageFront">
+              <Translate contentKey="toothApp.studentPW.p1ImageFront">P 1 Image Front</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.p1ImageFront}</dd>
+          <dt>
+            <span id="p2ImageFront">
+              <Translate contentKey="toothApp.studentPW.p2ImageFront">P 2 Image Front</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.p2ImageFront}</dd>
+          <dt>
+            <span id="p3ImageFront">
+              <Translate contentKey="toothApp.studentPW.p3ImageFront">P 3 Image Front</Translate>
+            </span>
+          </dt>
+          <dd>{studentPWEntity.p3ImageFront}</dd>
+          <dt>
             <Translate contentKey="toothApp.studentPW.student">Student</Translate>
           </dt>
           <dd>{studentPWEntity.student ? `${studentPWEntity.student.user.firstName} ${studentPWEntity.student.user.lastName}` : ''}</dd>

@@ -61,6 +61,45 @@ export const StudentPWUpdate = () => {
       values.id = Number(values.id);
     }
     values.date = convertDateTimeToServer(values.date);
+    if (values.note !== undefined && typeof values.note !== 'number') {
+      values.note = Number(values.note);
+    }
+    if (values.a1ImageSide !== undefined && typeof values.a1ImageSide !== 'number') {
+      values.a1ImageSide = Number(values.a1ImageSide);
+    }
+    if (values.a2ImageSide !== undefined && typeof values.a2ImageSide !== 'number') {
+      values.a2ImageSide = Number(values.a2ImageSide);
+    }
+    if (values.a3ImageSide !== undefined && typeof values.a3ImageSide !== 'number') {
+      values.a3ImageSide = Number(values.a3ImageSide);
+    }
+    if (values.p1ImageSide !== undefined && typeof values.p1ImageSide !== 'number') {
+      values.p1ImageSide = Number(values.p1ImageSide);
+    }
+    if (values.p2ImageSide !== undefined && typeof values.p2ImageSide !== 'number') {
+      values.p2ImageSide = Number(values.p2ImageSide);
+    }
+    if (values.p3ImageSide !== undefined && typeof values.p3ImageSide !== 'number') {
+      values.p3ImageSide = Number(values.p3ImageSide);
+    }
+    if (values.a1ImageFront !== undefined && typeof values.a1ImageFront !== 'number') {
+      values.a1ImageFront = Number(values.a1ImageFront);
+    }
+    if (values.a2ImageFront !== undefined && typeof values.a2ImageFront !== 'number') {
+      values.a2ImageFront = Number(values.a2ImageFront);
+    }
+    if (values.a3ImageFront !== undefined && typeof values.a3ImageFront !== 'number') {
+      values.a3ImageFront = Number(values.a3ImageFront);
+    }
+    if (values.p1ImageFront !== undefined && typeof values.p1ImageFront !== 'number') {
+      values.p1ImageFront = Number(values.p1ImageFront);
+    }
+    if (values.p2ImageFront !== undefined && typeof values.p2ImageFront !== 'number') {
+      values.p2ImageFront = Number(values.p2ImageFront);
+    }
+    if (values.p3ImageFront !== undefined && typeof values.p3ImageFront !== 'number') {
+      values.p3ImageFront = Number(values.p3ImageFront);
+    }
 
     const entity = {
       ...studentPWEntity,
@@ -139,6 +178,91 @@ export const StudentPWUpdate = () => {
                 data-cy="date"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
+              />
+              <ValidatedField label={translate('toothApp.studentPW.note')} id="student-pw-note" name="note" data-cy="note" type="text" />
+              <ValidatedField
+                label={translate('toothApp.studentPW.a1ImageSide')}
+                id="student-pw-a1ImageSide"
+                name="a1ImageSide"
+                data-cy="a1ImageSide"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.a2ImageSide')}
+                id="student-pw-a2ImageSide"
+                name="a2ImageSide"
+                data-cy="a2ImageSide"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.a3ImageSide')}
+                id="student-pw-a3ImageSide"
+                name="a3ImageSide"
+                data-cy="a3ImageSide"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.p1ImageSide')}
+                id="student-pw-p1ImageSide"
+                name="p1ImageSide"
+                data-cy="p1ImageSide"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.p2ImageSide')}
+                id="student-pw-p2ImageSide"
+                name="p2ImageSide"
+                data-cy="p2ImageSide"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.p3ImageSide')}
+                id="student-pw-p3ImageSide"
+                name="p3ImageSide"
+                data-cy="p3ImageSide"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.a1ImageFront')}
+                id="student-pw-a1ImageFront"
+                name="a1ImageFront"
+                data-cy="a1ImageFront"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.a2ImageFront')}
+                id="student-pw-a2ImageFront"
+                name="a2ImageFront"
+                data-cy="a2ImageFront"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.a3ImageFront')}
+                id="student-pw-a3ImageFront"
+                name="a3ImageFront"
+                data-cy="a3ImageFront"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.p1ImageFront')}
+                id="student-pw-p1ImageFront"
+                name="p1ImageFront"
+                data-cy="p1ImageFront"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.p2ImageFront')}
+                id="student-pw-p2ImageFront"
+                name="p2ImageFront"
+                data-cy="p2ImageFront"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('toothApp.studentPW.p3ImageFront')}
+                id="student-pw-p3ImageFront"
+                name="p3ImageFront"
+                data-cy="p3ImageFront"
+                type="text"
               />
               <ValidatedField
                 id="student-pw-student"

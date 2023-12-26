@@ -104,7 +104,8 @@ const Profile = () => {
                       <th>Title</th>
                       <th>Image 1</th>
                       <th>Image 2</th>
-                      <th>Date</th>
+                      <th>Note</th>
+                      <th>View</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -116,14 +117,27 @@ const Profile = () => {
                         <td>
                           <img
                             src={`data:${studentPw.imageFrontContentType};base64,${studentPw.imageFront}`}
-                            style={{ maxHeight: '80px' }}
+                            style={{ maxHeight: '60px' }}
                           />
                         </td>
                         <td>
-                          <img src={`data:${studentPw.imageSideContentType};base64,${studentPw.imageSide}`} style={{ maxHeight: '80px' }} />
+                          <img src={`data:${studentPw.imageSideContentType};base64,${studentPw.imageSide}`} style={{ maxHeight: '60px' }} />
                         </td>
                         <td className="table-actions">
-                          <span className="font-weight-bold">{formatDateString(studentPw.date)}</span>
+                          <span className="font-weight-bold">{studentPw.note}</span>
+                        </td>
+                        <td className="table-actions">
+                          <a
+                            href={`/student-pw/${studentPw.id}`}
+                            style={{
+                              fontSize: '1.3rem',
+                            }}
+                            className="table-action"
+                            data-toggle="tooltip"
+                            data-original-title="Edit product"
+                          >
+                            <i className="fas fa-user-edit"></i>
+                          </a>
                         </td>
                       </tr>
                     ))}
