@@ -266,13 +266,12 @@ public class AccountResource {
         if (existingUser.isPresent() && (!existingUser.orElseThrow().getLogin().equalsIgnoreCase(userLogin))) {
             throw new EmailAlreadyUsedException();
         }
-        Optional<User> user = userRepository.findOneByLogin(userLogin);
-        if (!user.isPresent()) {
-            throw new AccountResourceException("User could not be found");
-        }
-        Professor prof = professorRepository
-            .findByUser(user.get())
-            .orElseThrow(() -> new AccountResourceException("User could not be found"));
+        User user = userRepository.findOneByLogin(userLogin).orElseThrow(() -> new AccountResourceException("User could not be found"));
+        // Optional<User> user = userRepository.findOneByLogin(userLogin);
+        // if (!user.isPresent()) {
+        // throw new AccountResourceException("User could not be found");
+        // }
+        Professor prof = professorRepository.findByUser(user).orElseThrow(() -> new AccountResourceException("User could not be found"));
         prof.setGrade(userDTO.getGrade());
         userService.updateProfUser(
             userDTO.getFirstName(),
@@ -304,13 +303,12 @@ public class AccountResource {
         if (existingUser.isPresent() && (!existingUser.orElseThrow().getLogin().equalsIgnoreCase(userLogin))) {
             throw new EmailAlreadyUsedException();
         }
-        Optional<User> user = userRepository.findOneByLogin(userLogin);
-        if (!user.isPresent()) {
-            throw new AccountResourceException("User could not be found");
-        }
-        Student student = studentRepository
-            .findByUser(user.get())
-            .orElseThrow(() -> new AccountResourceException("User could not be found"));
+        User user = userRepository.findOneByLogin(userLogin).orElseThrow(() -> new AccountResourceException("User could not be found"));
+        // Optional<User> user = userRepository.findOneByLogin(userLogin);
+        // if (!user.isPresent()) {
+        // throw new AccountResourceException("User could not be found");
+        // }
+        Student student = studentRepository.findByUser(user).orElseThrow(() -> new AccountResourceException("User could not be found"));
         System.out.println(student);
         student.setCin(userDTO.getCin());
         student.setCne(userDTO.getCne());
