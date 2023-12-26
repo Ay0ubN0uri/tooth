@@ -85,7 +85,10 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = jHipsterProperties.getCors();
-        config.addAllowedOrigin("*");
+        config.addAllowedOriginPattern("*");
+        config.addAllowedOrigin("https://railway.app");
+        config.addAllowedOrigin("https://*.railway.app");
+        // config.addAllowedOrigin("*");
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");
         if (!CollectionUtils.isEmpty(config.getAllowedOrigins()) || !CollectionUtils.isEmpty(config.getAllowedOriginPatterns())) {
