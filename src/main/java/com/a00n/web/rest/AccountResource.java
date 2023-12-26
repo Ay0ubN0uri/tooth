@@ -16,6 +16,7 @@ import com.a00n.service.dto.PasswordChangeDTO;
 import com.a00n.service.dto.ProfessorDTO;
 import com.a00n.service.dto.StudentDTO;
 import com.a00n.web.rest.errors.*;
+import com.a00n.web.rest.vm.CheckVM;
 import com.a00n.web.rest.vm.KeyAndPasswordVM;
 import com.a00n.web.rest.vm.ManagedUserVM;
 import jakarta.servlet.http.HttpServletRequest;
@@ -80,9 +81,12 @@ public class AccountResource {
      * {@code POST  /register} : register the user.
      *
      * @param managedUserVM the managed user View Model.
-     * @throws InvalidPasswordException {@code 400 (Bad Request)} if the password is incorrect.
-     * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is already used.
-     * @throws LoginAlreadyUsedException {@code 400 (Bad Request)} if the login is already used.
+     * @throws InvalidPasswordException  {@code 400 (Bad Request)} if the password
+     *                                   is incorrect.
+     * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is
+     *                                   already used.
+     * @throws LoginAlreadyUsedException {@code 400 (Bad Request)} if the login is
+     *                                   already used.
      */
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
@@ -98,7 +102,8 @@ public class AccountResource {
      * {@code GET  /activate} : activate the registered user.
      *
      * @param key the activation key.
-     * @throws RuntimeException {@code 500 (Internal Server Error)} if the user couldn't be activated.
+     * @throws RuntimeException {@code 500 (Internal Server Error)} if the user
+     *                          couldn't be activated.
      */
     @GetMapping("/activate")
     public void activateAccount(@RequestParam(value = "key") String key) {
@@ -112,7 +117,8 @@ public class AccountResource {
      * {@code GET  /account} : get the current user.
      *
      * @return the current user.
-     * @throws RuntimeException {@code 500 (Internal Server Error)} if the user couldn't be returned.
+     * @throws RuntimeException {@code 500 (Internal Server Error)} if the user
+     *                          couldn't be returned.
      */
     @GetMapping("/account")
     public AdminUserDTO getAccount(HttpServletRequest request) {
@@ -159,10 +165,10 @@ public class AccountResource {
 
     // @GetMapping("/account")
     // public AdminUserDTO getAccount() {
-    //     return userService
-    //         .getUserWithAuthorities()
-    //         .map(AdminUserDTO::new)
-    //         .orElseThrow(() -> new AccountResourceException("User could not be found"));
+    // return userService
+    // .getUserWithAuthorities()
+    // .map(AdminUserDTO::new)
+    // .orElseThrow(() -> new AccountResourceException("User could not be found"));
     // }
 
     @GetMapping("/a00n")
@@ -174,7 +180,8 @@ public class AccountResource {
     public String upload(@RequestParam("image") MultipartFile file, HttpServletRequest request) throws IOException {
         byte[] image = Files.readAllBytes(Paths.get("/home/ay0ub/Desktop/ayoub nouri.jpg"));
         uploadDir = request.getServletContext().getRealPath(Constants.UPLOAD_DIRECTORY);
-        // uploadDir = "/home/ay0ub/Desktop/spring projects/tooth/src/main/webapp/content/images/uploads";
+        // uploadDir = "/home/ay0ub/Desktop/spring
+        // projects/tooth/src/main/webapp/content/images/uploads";
         this.createFileIfNotExists();
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
         String fileName = file.getOriginalFilename();
@@ -205,8 +212,10 @@ public class AccountResource {
      *
      * @param userDTO the current user information.
      * @throws IOException
-     * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is already used.
-     * @throws RuntimeException {@code 500 (Internal Server Error)} if the user login wasn't found.
+     * @throws EmailAlreadyUsedException {@code 400 (Bad Request)} if the email is
+     *                                   already used.
+     * @throws RuntimeException          {@code 500 (Internal Server Error)} if the
+     *                                   user login wasn't found.
      */
     @PostMapping("/account")
     public void saveAccount(@Valid @RequestBody AdminUserDTO userDTO) throws IOException {
@@ -326,7 +335,8 @@ public class AccountResource {
      * {@code POST  /account/change-password} : changes the current user's password.
      *
      * @param passwordChangeDto current and new password.
-     * @throws InvalidPasswordException {@code 400 (Bad Request)} if the new password is incorrect.
+     * @throws InvalidPasswordException {@code 400 (Bad Request)} if the new
+     *                                  password is incorrect.
      */
     @PostMapping(path = "/account/change-password")
     public void changePassword(@RequestBody PasswordChangeDTO passwordChangeDto) {
@@ -337,7 +347,8 @@ public class AccountResource {
     }
 
     /**
-     * {@code POST   /account/reset-password/init} : Send an email to reset the password of the user.
+     * {@code POST   /account/reset-password/init} : Send an email to reset the
+     * password of the user.
      *
      * @param mail the mail of the user.
      */
@@ -347,7 +358,8 @@ public class AccountResource {
         if (user.isPresent()) {
             mailService.sendPasswordResetMail(user.orElseThrow());
         } else {
-            // Pretend the request has been successful to prevent checking which emails really exist
+            // Pretend the request has been successful to prevent checking which emails
+            // really exist
             // but log that an invalid attempt has been made
             log.warn("Password reset requested for non existing mail");
         }
@@ -359,21 +371,27 @@ public class AccountResource {
         if (user.isPresent()) {
             mailService.sendPasswordResetMailMobile(user.orElseThrow());
         } else {
-            // Pretend the request has been successful to prevent checking which emails really exist
+            // Pretend the request has been successful to prevent checking which emails
+            // really exist
             // but log that an invalid attempt has been made
             log.warn("Password reset requested for non existing mail");
         }
     }
 
     /**
-     * {@code POST   /account/reset-password/finish} : Finish to reset the password of the user.
+     * {@code POST   /account/reset-password/finish} : Finish to reset the password
+     * of the user.
      *
      * @param keyAndPassword the generated key and the new password.
-     * @throws InvalidPasswordException {@code 400 (Bad Request)} if the password is incorrect.
-     * @throws RuntimeException {@code 500 (Internal Server Error)} if the password could not be reset.
+     * @throws InvalidPasswordException {@code 400 (Bad Request)} if the password is
+     *                                  incorrect.
+     * @throws RuntimeException         {@code 500 (Internal Server Error)} if the
+     *                                  password could not be reset.
      */
     @PostMapping(path = "/account/reset-password/finish")
     public void finishPasswordReset(@RequestBody KeyAndPasswordVM keyAndPassword) {
+        System.out.println("=======================================");
+        System.out.println(keyAndPassword);
         if (isPasswordLengthInvalid(keyAndPassword.getNewPassword())) {
             throw new InvalidPasswordException();
         }
@@ -382,6 +400,21 @@ public class AccountResource {
         if (!user.isPresent()) {
             throw new AccountResourceException("No user was found for this reset key");
         }
+    }
+
+    @PostMapping(path = "/account/reset-password/check")
+    public void isMobileCodeValidForEmail(@RequestBody CheckVM checkVM) {
+        System.out.println(checkVM);
+        var user = userRepository.findOneByEmailIgnoreCase(checkVM.getEmail()).orElse(null);
+        System.out.println(user);
+        if (user != null) {
+            if (user.getResetKey() == null || !user.getResetKey().equals(checkVM.getKey())) {
+                throw new BadRequestAlertException("Invalid Key", "Check", "idexists");
+            }
+        } else {
+            throw new BadRequestAlertException("Invalid Email", "Check", "idexists");
+        }
+        // throw new BadRequestAlertException("Invalid Key", "Check", "idexists");
     }
 
     private static boolean isPasswordLengthInvalid(String password) {
