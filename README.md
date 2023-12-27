@@ -1,6 +1,8 @@
 # tooth
 
-It is live [here](https://tooth-production.up.railway.app/)
+## Install it with docker
+
+[here](https://hub.docker.com/r/leeuw20/tooth)
 
 This application was generated using JHipster 8.1.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v8.1.0](https://www.jhipster.tech/documentation-archive/v8.1.0).
 
